@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: easymoneybot-db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: easymoneybot
+      MYSQL_USER: alya
+      MYSQL_PASSWORD: mumdad2002
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./database_backup.sql:/docker-entrypoint-initdb.d/database_backup.sql
+    ports:
+      - "3306:3306"
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_general_ci
+    networks:
+      - bot-network
+      
+  bot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: easymoneybot
+    restart: always
+    depends_on:
+      - db
+    environment:
+      - DB_HOST=db
+      - DB_USER=alya
+      - DB_PASSWORD=mumdad2002
+      - DB_NAME=easymoneybot
+      - TELEGRAM_TOKEN=7716381751:AAFrfoLQ2Xeqx9Pf-WjfGnTntkHbXL0LGHc
+      - ADMIN_ID=1388747442
+    volumes:
+      - ./bot.py:/app/bot.py
+    networks:
+      - bot-network
+
+networks:
+  bot-network:
+    driver: bridge
+
+volumes:
+  db_data:
