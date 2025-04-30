@@ -13,12 +13,12 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 logger = logging.getLogger(__name__)
 
 # Get environment variables
-TOKEN = os.environ.get('TELEGRAM_TOKEN', "7716381751:AAFrfoLQ2Xeqx9Pf-WjfGnTntkHbXL0LGHc")
+TOKEN = os.environ.get('TELEGRAM_TOKEN', "7716381751:AAGLF-fc4_TkxS3EsvYiS9sd3fHV-pJZlgo")
 ADMIN_ID = int(os.environ.get('ADMIN_ID', 1388747442))
 
 # Database Configuration from environment variables
 DB_CONFIG = {
-    "host": os.environ.get('DB_HOST', 'db'),
+    "host": os.environ.get('DB_HOST', 'localhost'),
     "user": os.environ.get('DB_USER', 'alya'),
     "password": os.environ.get('DB_PASSWORD', 'mumdad2002'),
     "database": os.environ.get('DB_NAME', 'easymoneybot')

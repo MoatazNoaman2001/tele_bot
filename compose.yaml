@@ -14,7 +14,7 @@ services:
       - db_data:/var/lib/mysql
       - ./database_backup.sql:/docker-entrypoint-initdb.d/database_backup.sql
     ports:
-      - "3306:3306"
+      - "3320:3320"
     command: --character-set-server=utf8mb4 --collation-server=utf8mb4_general_ci
     networks:
       - bot-network

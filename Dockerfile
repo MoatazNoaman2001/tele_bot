@@ -15,7 +15,7 @@ COPY bot.py .
 RUN echo '#!/bin/bash\n\
 # Wait for MySQL to be ready\n\
 echo "Waiting for MySQL..."\n\
-while ! nc -z $DB_HOST 3306; do\n\
+while ! nc -z $DB_HOST 3320; do\n\
   sleep 1\n\
 done\n\
 echo "MySQL started"\n\
