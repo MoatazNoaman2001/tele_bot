@@ -13,7 +13,7 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 logger = logging.getLogger(__name__)
 
 # Get environment variables
-TOKEN = os.environ.get('TELEGRAM_TOKEN', "7716381751:AAGLF-fc4_TkxS3EsvYiS9sd3fHV-pJZlgo")
+TOKEN = os.environ.get('TELEGRAM_TOKEN', "7716381751:AAFKtI0rJs2Bc3i5E-WOMWjG49IryC1bNTk")
 ADMIN_ID = int(os.environ.get('ADMIN_ID', 1388747442))
 
 # Database Configuration from environment variables
