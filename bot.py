@@ -21,7 +21,7 @@ DB_CONFIG = {
     "host": os.environ.get('DB_HOST', 'localhost'),
     "user": os.environ.get('DB_USER', 'alya'),
     "password": os.environ.get('DB_PASSWORD', 'mumdad2002'),
-    "database": os.environ.get('DB_NAME', 'easymoneybot')
+        "database": os.environ.get('DB_NAME', 'easymoneybot')
 }
 
 # Connect to the database with retry logic
